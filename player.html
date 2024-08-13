@@ -4,24 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTMP Video</title>
+    <title>LaurinhaTV</title>
     <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+    <style>
+        body {
+            background-color: #f5e6fa;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff8ae2;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container {
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #ff8ae2;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
-    <h1>RTMP LaurinhaTV</h1>
+    <header>
+        <h1>Bem vindos a minha live! Sou a Laurinha 🦄</h1>
+    </header>
 
-    <!-- Contêiner do player de vídeo -->
-    <video id="video-player" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
-        <source src="http://127.0.0.1:8082/output.m3u8" type="application/x-mpegURL">
-        <!-- Mensagem caso o vídeo não carregue -->
-        <p class=" vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-        </p>
-    </video>
+    <main>
+        <div class="video-container">
+            <!-- Contêiner do player de vídeo -->
+            <video id="video-player" class="video-js vjs-default-skin" controls preload="auto">
+                <source src="http://191.252.193.123:8082/output.m3u8" type="application/x-mpegURL">
+                <!-- Mensagem caso o vídeo não carregue -->
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LaFersam</p>
+    </footer>
 
     <!-- Inicializa o player -->
     <script>
